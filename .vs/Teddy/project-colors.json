@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "797c9f84-cf24-4371-b6e0-01d69321f191": {
+      "ProjectGuid": "797c9f84-cf24-4371-b6e0-01d69321f191",
+      "DisplayName": "TeddyBench",
+      "ColorIndex": 0
+    },
+    "c532c817-33af-4ded-a87a-71afb84bf0eb": {
+      "ProjectGuid": "c532c817-33af-4ded-a87a-71afb84bf0eb",
+      "DisplayName": "Concentus.Oggfile",
+      "ColorIndex": 1
+    },
+    "8f1562fe-d044-4c38-b101-a5113ce932f4": {
+      "ProjectGuid": "8f1562fe-d044-4c38-b101-a5113ce932f4",
+      "DisplayName": "TonieAudio",
+      "ColorIndex": 2
+    },
+    "e085f338-9cfb-4959-8c47-504341fd09b1": {
+      "ProjectGuid": "e085f338-9cfb-4959-8c47-504341fd09b1",
+      "DisplayName": "Teddy",
+      "ColorIndex": 3
+    },
+    "123b448a-3042-43c1-aa5d-2fcd0443a71d": {
+      "ProjectGuid": "123b448a-3042-43c1-aa5d-2fcd0443a71d",
+      "DisplayName": "ID3",
+      "ColorIndex": 4
+    },
+    "07bbf192-64ad-4229-ae91-d78956684161": {
+      "ProjectGuid": "07bbf192-64ad-4229-ae91-d78956684161",
+      "DisplayName": "Concentus",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}
