@@ -196,6 +196,7 @@ namespace TeddyBench
                 }
                 catch (TimeoutException ex)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                     data.cmd = (int)eResponseType.Timeout;
                     return;
                 }
@@ -351,6 +352,7 @@ namespace TeddyBench
                         }
                         catch (Exception ex)
                         {
+                            LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                             Close();
                             Thread.Sleep(250);
                         }
@@ -514,6 +516,7 @@ namespace TeddyBench
                     }
                     catch (Exception ex)
                     {
+                        LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                     }
 
                     try
@@ -522,6 +525,7 @@ namespace TeddyBench
                     }
                     catch (Exception ex)
                     {
+                        LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                     }
                     Port.Dispose();
                     Port = null;
@@ -876,8 +880,9 @@ namespace TeddyBench
                     p.Close();
                     reallyAvailablePorts.Add(listedPort);
                 }
-                catch (Exception e0)
+                catch (Exception e)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, e.Message);
                 }
             }
 
@@ -1050,6 +1055,7 @@ namespace TeddyBench
             }
             catch (Exception ex)
             {
+                LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                 try
                 {
                     if (p != null && p.IsOpen)
@@ -1059,6 +1065,7 @@ namespace TeddyBench
                 }
                 catch (Exception e)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, e.Message);
                 }
             }
 
@@ -1393,6 +1400,7 @@ namespace TeddyBench
                     }
                     catch (Exception ex)
                     {
+                        LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                     }
                 }
             });

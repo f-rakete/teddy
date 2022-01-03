@@ -144,6 +144,7 @@ namespace TeddyBench
                 }
                 catch (Exception e)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, e.Message);
                 }
 
                 try
@@ -152,6 +153,7 @@ namespace TeddyBench
                 }
                 catch (Exception e)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, e.Message);
                     TonieInfos = new TonieTools.TonieData[0];
                 }
 
@@ -161,11 +163,13 @@ namespace TeddyBench
                 }
                 catch (Exception e)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, e.Message);
                     CustomTonies = new Dictionary<string, string>();
                 }
             }
             catch (Exception e)
             {
+                LogWindow.Log(LogWindow.eLogLevel.Information, e.Message);
                 return;
             }
         }
@@ -178,6 +182,7 @@ namespace TeddyBench
             }
             catch (Exception e)
             {
+                LogWindow.Log(LogWindow.eLogLevel.Information, e.Message);
                 return;
             }
         }
@@ -424,6 +429,7 @@ namespace TeddyBench
             }
             catch (Exception ex)
             {
+                LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
             }
         }
 
@@ -517,6 +523,7 @@ namespace TeddyBench
                             }
                             catch (Exception ex)
                             {
+                                LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                             }
                         }
                     }
@@ -534,6 +541,7 @@ namespace TeddyBench
                         }
                         catch (Exception ex)
                         {
+                            LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                             failedRead = true;
                         }
 
@@ -545,6 +553,7 @@ namespace TeddyBench
                 }
                 catch (Exception ex)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                 }
 
                 Thread.Sleep(500);
@@ -665,6 +674,7 @@ namespace TeddyBench
                 }
                 catch (Exception ex)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                 }
                 lstTonies.Sort();
             }
@@ -801,6 +811,7 @@ namespace TeddyBench
                             }
                             catch (Exception ex)
                             {
+                                LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                             }
                         }
                     }
@@ -827,6 +838,7 @@ namespace TeddyBench
             }
             catch (Exception ex)
             {
+                LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
             }
 
             try
@@ -841,11 +853,13 @@ namespace TeddyBench
                 }
                 catch (Exception ex)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                 }
                 return img;
             }
             catch (Exception ex)
             {
+                LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
             }
 
             return null;
@@ -940,6 +954,7 @@ namespace TeddyBench
                         }
                         catch (Exception ex)
                         {
+                            LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                             MessageBox.Show("The file you have chosen is not supported.", "Add file...");
                             return;
                         }
@@ -975,6 +990,7 @@ namespace TeddyBench
                 }
                 catch (Exception ex)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                     MessageBox.Show("Failed to create directory '" + newDir + "'");
                     return;
                 }
@@ -985,6 +1001,7 @@ namespace TeddyBench
                 }
                 catch (Exception ex)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                     MessageBox.Show("Failed to write file '" + newFile + "'");
                     return;
                 }
@@ -1029,6 +1046,7 @@ namespace TeddyBench
                 }
                 catch (Exception ex)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                     MessageBox.Show("Failed to create directory '" + newDir + "'");
                     return;
                 }
@@ -1038,6 +1056,7 @@ namespace TeddyBench
                 }
                 catch (Exception ex)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                     MessageBox.Show("Failed to write file '" + newFile + "'");
                     return;
                 }
@@ -1253,6 +1272,7 @@ namespace TeddyBench
                     }
                     catch (Exception ex)
                     {
+                        LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                         MessageBox.Show("Failed to create directory '" + newDir + "'", "Re-assigning UID failed");
                         return;
                     }
@@ -1272,6 +1292,7 @@ namespace TeddyBench
                     }
                     catch (Exception ex)
                     {
+                        LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                         MessageBox.Show("Failed to write file '" + newFile + "'", "Re-assigning UID failed");
                         return;
                     }
@@ -1321,6 +1342,7 @@ namespace TeddyBench
                 }
                 catch (Exception ex)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                     MessageBox.Show("Failed to delete file/directory '" + tag.FileName + "'");
                     return;
                 }
@@ -1430,6 +1452,7 @@ namespace TeddyBench
                     }
                     catch (Exception ex)
                     {
+                        LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                         MessageBox.Show("Failed to save file '" + tag.FileName + "'");
                         return;
                     }
@@ -1642,8 +1665,9 @@ namespace TeddyBench
                 }
                 return false;
             }
-            catch (Exception ee)
+            catch (Exception e)
             {
+                LogWindow.Log(LogWindow.eLogLevel.Information, e.Message);
             }
             return false;
         }
@@ -1681,6 +1705,7 @@ namespace TeddyBench
                 }
                 catch (Exception ex)
                 {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
                 }
                 AsyncTagActionThread = null;
             });
