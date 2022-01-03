@@ -15,6 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -359,7 +360,7 @@ namespace TeddyBench
             if (e != null)
             {
                 /* already handled this UID? then return */
-                if(e == LastFoundUid)
+                if (e == LastFoundUid)
                 {
                     return;
                 }
@@ -814,15 +815,15 @@ namespace TeddyBench
 
             try
             {
-                if(!Directory.Exists("cache"))
+                if (!Directory.Exists("cache"))
                 {
                     Directory.CreateDirectory("cache");
                 }
-
-                if (File.Exists(cacheFileName))
-                {
-                    return Image.FromFile(cacheFileName);
-                }
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                    if (File.Exists(cacheFileName))
+                    {
+                        return Image.FromFile(cacheFileName);
+                    }
             }
             catch (Exception ex)
             {
@@ -856,7 +857,7 @@ namespace TeddyBench
             if (CachedAudios.ContainsKey(fileName))
             {
                 Tuple<TonieAudio, DateTime> cachedItem = CachedAudios[fileName];
-                if(cachedItem.Item2 == info.LastWriteTime)
+                if (cachedItem.Item2 == info.LastWriteTime)
                 {
                     return cachedItem.Item1;
                 }
@@ -1498,7 +1499,7 @@ namespace TeddyBench
         }
 
         private async Task<bool> ReportSelected()
-        { 
+        {
             if (lstTonies.SelectedItems.Count == 0)
             {
                 return false;
@@ -1538,7 +1539,7 @@ namespace TeddyBench
 
         private async void reportallFilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(lstTonies.Items.Count == 0)
+            if (lstTonies.Items.Count == 0)
             {
                 return;
             }
@@ -1635,7 +1636,7 @@ namespace TeddyBench
 
                 LogWindow.Log(LogWindow.eLogLevel.Debug, sd);
 
-                if(sd != "")
+                if (sd != "")
                 {
                     return true;
                 }
@@ -1654,7 +1655,7 @@ namespace TeddyBench
 
         private async void readContentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(Proxmark3 == null || AsyncTagActionThread != null)
+            if (Proxmark3 == null || AsyncTagActionThread != null)
             {
                 return;
             }
@@ -1678,7 +1679,7 @@ namespace TeddyBench
                         }
                     }));
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                 }
                 AsyncTagActionThread = null;
@@ -1686,7 +1687,7 @@ namespace TeddyBench
             AsyncTagActionThread.Start();
             TagOperationDialog opDlg = new TagOperationDialog(true);
 
-            opDlg.Show();        
+            opDlg.Show();
 
             await Task.Run(() =>
             {
@@ -1717,7 +1718,7 @@ namespace TeddyBench
             {
                 byte[] data = Helpers.ConvertHexStringToByteArray(dlg.String);
 
-                AsyncTagActionThread = new Thread(() => 
+                AsyncTagActionThread = new Thread(() =>
                 {
                     try
                     {
@@ -1760,7 +1761,7 @@ namespace TeddyBench
 
         private void UpdateNfcReader()
         {
-            if(Settings.NfcEnabled)
+            if (Settings.NfcEnabled)
             {
                 if (Proxmark3 == null)
                 {
@@ -1774,7 +1775,7 @@ namespace TeddyBench
             }
             else
             {
-                if(Proxmark3 != null)
+                if (Proxmark3 != null)
                 {
                     Proxmark3.Stop();
                     Proxmark3 = null;
@@ -1852,7 +1853,7 @@ namespace TeddyBench
 
         private void consoleModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(!consoleModeToolStripMenuItem.Checked)
+            if (!consoleModeToolStripMenuItem.Checked)
             {
                 consoleModeToolStripMenuItem.Checked = true;
                 Proxmark3.EnterConsole();

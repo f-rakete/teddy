@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Media;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace TeddyBench
@@ -39,7 +41,8 @@ namespace TeddyBench
                 txtUid.Text = e;
                 txtUid.Select();
                 txtUid.Select(6, 10);
-                SystemSounds.Beep.Play();
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                    SystemSounds.Beep.Play();
             }
         }
 

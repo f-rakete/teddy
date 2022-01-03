@@ -17,16 +17,19 @@ namespace TeddyBench
         public static Settings FromFile(string file)
         {
             Settings s = null;
-
-            try
+            if (File.Exists(file))
             {
-                s = JsonConvert.DeserializeObject<Settings>(File.ReadAllText(file));
-            }
-            catch(Exception ex)
-            {
-            }
+                try
+                {
+                    s = JsonConvert.DeserializeObject<Settings>(File.ReadAllText(file));
+                }
+                catch (Exception ex)
+                {
+                    LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
+                }
 
-            if(s != null)
+            }
+            if (s != null)
             {
                 return s;
             }
@@ -41,8 +44,9 @@ namespace TeddyBench
                 File.WriteAllText(file, JsonConvert.SerializeObject(this, Formatting.Indented));
                 return true;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
+                LogWindow.Log(LogWindow.eLogLevel.Information, ex.Message);
             }
             return false;
         }
