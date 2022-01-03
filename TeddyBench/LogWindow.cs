@@ -17,7 +17,7 @@ namespace TeddyBench
         private DateTime LastWindowUpdate;
         private DateTime LastTextUpdate;
 
-        public static eLogLevel LogLevel = eLogLevel.Warning;
+        public static eLogLevel LogLevel = eLogLevel.DebugVerbose;
 
         public enum eLogLevel
         {
