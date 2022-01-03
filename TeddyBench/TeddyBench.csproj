@@ -22,9 +22,6 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\TonieAudio\TonieAudio.csproj" />
   </ItemGroup>
   <ItemGroup>
