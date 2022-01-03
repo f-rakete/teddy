@@ -17,7 +17,6 @@ limitations under the License.
 */
 #endregion
 
-using JetBrains.Annotations;
 
 namespace Id3.Frames
 {
@@ -27,7 +26,7 @@ namespace Id3.Frames
         {
         }
 
-        public AudioFileUrlFrame([NotNull] string url) : base(url)
+        public AudioFileUrlFrame( string url) : base(url)
         {
         }
 

@@ -18,7 +18,6 @@ limitations under the License.
 #endregion
 
 using System.Collections.ObjectModel;
-using JetBrains.Annotations;
 
 namespace Id3.Frames
 {
@@ -28,7 +27,7 @@ namespace Id3.Frames
         {
         }
 
-        public ArtistUrlFrame([NotNull] string url) : base(url)
+        public ArtistUrlFrame( string url) : base(url)
         {
         }
 

@@ -19,7 +19,6 @@ limitations under the License.
 
 using System;
 using System.Collections.ObjectModel;
-using JetBrains.Annotations;
 
 namespace Id3.Frames
 {
@@ -29,12 +28,12 @@ namespace Id3.Frames
         {
         }
 
-        public LyricsFrame([NotNull] string lyrics)
+        public LyricsFrame( string lyrics)
         {
             Lyrics = lyrics ?? throw new ArgumentNullException(nameof(lyrics));
         }
 
-        public LyricsFrame([NotNull] string lyrics, [NotNull] string description)
+        public LyricsFrame( string lyrics,  string description)
         {
             Description = description ?? throw new ArgumentNullException(nameof(description));
             Lyrics = lyrics ?? throw new ArgumentNullException(nameof(lyrics));
