@@ -1,4 +1,5 @@
-﻿using ScottPlot;
+﻿#pragma warning disable CA1416 // Validate platform compatibility
+using ScottPlot;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
