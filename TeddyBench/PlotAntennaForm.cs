@@ -18,12 +18,12 @@ namespace TeddyBench
         {
             InitializeComponent();
 
-            formsPlot1.plt.PlotScatter(result.GetFrequencieskHz(), result.GetVoltages());
-            formsPlot1.plt.XLabel("Frequency [kHz]");
-            formsPlot1.plt.YLabel("Amplitude [V]");
-            formsPlot1.plt.Title("LF Antenna Plot (no relevance)");
-            formsPlot1.plt.AxisBounds(46.0f, 600.0f, 0, 65.0f);
-            formsPlot1.plt.Style(Style.Gray2);
+            formsPlot1.Plot.PlotScatter(result.GetFrequencieskHz(), result.GetVoltages());
+            formsPlot1.Plot.XLabel("Frequency [kHz]");
+            formsPlot1.Plot.YLabel("Amplitude [V]");
+            formsPlot1.Plot.Title("LF Antenna Plot (no relevance)");
+          //  formsPlot1.Plot.AxisBounds(46.0f, 600.0f, 0, 65.0f);          
+            formsPlot1.Plot.Style(Style.Gray2);
             formsPlot1.Render();
             formsPlot1.Show();
 

@@ -1148,7 +1148,7 @@ namespace TeddyBench
                 if (lstTonies.FocusedItem.Bounds.Contains(e.Location))
                 {
                     LastSelectediItem = lstTonies.SelectedItems[0];
-                    TonieContextMenu.Show(Cursor.Position);
+                    TonieContextMenu.Show(MousePosition);
                 }
             }
             else
